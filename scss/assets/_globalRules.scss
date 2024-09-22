@@ -1,0 +1,436 @@
+body,
+html {
+	overflow-x: hidden;
+	position: relative;
+	padding: 0 !important;
+	scroll-behavior: smooth;
+}
+
+// Framework
+
+svg {
+	flex-shrink: 0 !important;
+}
+
+img {
+	object-fit: cover !important;
+}
+
+.mainContent {
+	min-height: 100vh;
+	padding-top: 109px;
+}
+*:not(i) {
+	font-family: "Vazirmatn", sans-serif !important;
+	font-weight: 400;
+}
+
+.containerEdit {
+	max-width: 95% !important;
+}
+
+.transition-300ms {
+	transition: all 300ms ease-in-out !important;
+}
+
+.resize-none {
+	resize: none;
+}
+.cursor-pointer {
+	cursor: pointer !important;
+}
+.rounded-5px {
+	border-radius: 5px !important;
+}
+.rounded-8px {
+	border-radius: 8px !important;
+}
+.rounded-10px {
+	border-radius: 10px !important;
+}
+.rounded-20px {
+	border-radius: 20px !important;
+}
+.text-justify {
+	text-align: justify;
+}
+.direction-initial {
+	direction: initial;
+}
+.direction-rtl {
+	direction: rtl;
+}
+.direction-ltr {
+	direction: ltr;
+}
+
+.max-width-content {
+	max-width: max-content;
+}
+
+// More colors
+$EE0000: #ee0000;
+
+.text-ee0 {
+	color: $EE0000;
+}
+.bg-errors-bg-color {
+	background-color: $errors-bg-color;
+}
+
+// Borders
+
+// Bg
+
+.bg-f6 {
+	background-color: rgba($f6, var(--bs-bg-opacity)) !important;
+}
+
+// Media queries
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	.containerEdit {
+		max-width: 92% !important;
+	}
+	.containerEdit-mealDetails {
+		max-width: 92% !important;
+	}
+	.row-gap-sm-15px {
+		row-gap: 15px !important;
+	}
+	.column-gap-sm-20px {
+		column-gap: 20px !important;
+	}
+	.column-gap-sm-30px {
+		column-gap: 30px !important;
+	}
+	.column-gap-sm-35px {
+		column-gap: 35px !important;
+	}
+	.column-gap-sm-40px {
+		column-gap: 40px !important;
+	}
+	.column-gap-sm-45px {
+		column-gap: 45px !important;
+	}
+	.row-gap-sm-25px {
+		row-gap: 25px !important;
+	}
+	.row-gap-sm-30px {
+		row-gap: 30px !important;
+	}
+	.row-gap-sm-35px {
+		row-gap: 35px !important;
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.containerEdit {
+		max-width: 90% !important;
+	}
+	.containerEdit-mealDetails {
+		max-width: 90% !important;
+	}
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.containerEdit {
+		max-width: 88% !important;
+	}
+}
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.containerEdit {
+		max-width: 86% !important;
+	}
+}
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+	.containerEdit {
+		max-width: 1170px !important;
+	}
+}
+
+@media (min-width: 1600px) {
+	.containerEdit {
+		max-width: 1420px !important;
+	}
+}
+
+// Animation
+
+.primaryBtnHoverEffect {
+	background-color: $primary;
+	border: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.primaryBtnHoverEffect::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background-color: #fff;
+	z-index: -1;
+	transition: height 0.3s ease-in-out;
+}
+
+.primaryBtnHoverEffect:hover {
+	color: $primary !important;
+}
+
+.primaryBtnHoverEffect:hover::before {
+	height: 100%;
+}
+
+.outlineBtnHoverEffect {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.outlineBtnHoverEffect::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background-color: $primary;
+	z-index: -1;
+	transition: height 0.3s ease-in-out;
+}
+
+.outlineBtnHoverEffect:hover {
+	color: #fff !important;
+}
+
+.outlineBtnHoverEffect:hover::before {
+	height: 100%;
+}
+
+.borderHoverEffect {
+	border: 3px solid transparent;
+	border-bottom: 8px solid transparent;
+	&:hover {
+		border: 3px solid rgba($primary, 25%);
+		border-bottom: 8px solid rgba($primary, 25%);
+	}
+}
+
+.seeAll {
+	svg {
+		transition: all 0.3s ease-in-out;
+	}
+	&:hover {
+		svg {
+			transform: translateX(5px);
+		}
+	}
+}
+
+/*=== >cut text ===*/
+.cut-text-1 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.cut-text-2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.cut-text-3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.cut-text-6 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
+}
+
+// Remove arrows from input type number
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	appearance: textfield;
+	-ms-appearance: textfield;
+	-webkit-appearance: textfield;
+	-o-appearance: textfield;
+	-moz-appearance: textfield;
+}
+
+.modal-content {
+	max-height: 90vh;
+	overflow-y: scroll;
+}
+
+.opacityScrollbar::-webkit-scrollbar-thumb {
+	background-color: #4e547145;
+}
+
+// For dropdown
+.dropdown-toggle {
+	&.show {
+		&::after {
+			transform: rotate(180deg);
+		}
+	}
+	& ~ .dropdown-menu {
+		li {
+			a:not(.signutItem) {
+				&:hover {
+					background-color: rgba($primary, 10%) !important;
+				}
+			}
+		}
+		&::before {
+			position: absolute;
+			top: -11px;
+			right: 40px;
+			display: inline-block;
+			content: "";
+			background: url("../imgs/dropdown-menue-img.png") no-repeat center center;
+			width: 18.67px;
+			height: 12.83px;
+		}
+	}
+}
+.dropdown-toggle::after {
+	transition: all 0.3s ease-in-out;
+	margin: 0;
+	vertical-align: 0;
+	border: none !important;
+	background: url("../imgs/dropdown-img.png") no-repeat center center;
+	width: 14.67px;
+	height: 8.83px;
+}
+
+.signutItem {
+	&:hover {
+		background-color: #ee00000f !important;
+	}
+}
+
+// for svg
+
+// Svg fill
+.svgPath {
+	path {
+		fill: $primary;
+	}
+}
+.svgWhiteFillFill {
+	path {
+		fill: #fff;
+	}
+}
+
+// Svg colors
+.svgPrimaryStroke {
+	stroke: $primary;
+}
+.svgPathSecondary {
+	path,
+	ellipse,
+	circle {
+		fill: $secondary;
+	}
+}
+
+.svgPathPrimaryLastPathWhite {
+	path {
+		fill: $primary;
+	}
+	path:last-of-type {
+		fill: #fff;
+	}
+}
+.svgStorke {
+	path {
+		stroke: $primary;
+	}
+}
+.svgStorkeSecondary {
+	path {
+		stroke: $secondary;
+	}
+}
+.svgPathStorke {
+	path:first-of-type {
+		fill: $primary;
+	}
+	path:nth-of-type(2) {
+		stroke: $primary;
+	}
+}
+.svgWhiteStroke {
+	path {
+		stroke: #fff;
+	}
+}
+// for loader
+
+#loader {
+	z-index: 10000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(12px);
+	background: rgba(#000, 98%) !important;
+}
+
+.loader-spinner {
+	flex-shrink: 0;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: 4px solid $primary;
+	border-top-color: transparent;
+	animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.svgPathClicked {
+	path {
+		fill: #d22f27 !important;
+		stroke: #d22f27 !important;
+	}
+}
+
+// Borders
+.border-body {
+	border: 1px solid $body-color;
+}

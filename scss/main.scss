@@ -1,0 +1,597 @@
+@import "./assets/variables";
+// General rules
+@import "./assets/globalRules";
+@import "./assets/fontSizes";
+
+// Include any default variable overrides here (though functions won't be available)
+
+// scss-docs-start import-stack
+// Configuration
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "./assets/overrides";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/dropdown";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/transitions";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/close";
+@import "../node_modules/bootstrap/scss/offcanvas";
+@import "../node_modules/bootstrap/scss/badge";
+@import "../node_modules/bootstrap/scss/modal";
+@import "../node_modules/bootstrap/scss/alert";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/forms/form-text";
+@import "../node_modules/bootstrap/scss/forms/form-control";
+@import "../node_modules/bootstrap/scss/forms/form-select";
+@import "../node_modules/bootstrap/scss/forms/form-check";
+
+// Helpers
+@import "../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
+// Then add additional custom code here
+
+// import navbar
+@import "./components/navbar";
+// import navbar
+@import "./components/footer";
+// import breadcrumb
+@import "./components/breadcrumbMain.scss";
+
+// Custom styling
+
+// ================= Auth pages ================= //
+
+.mainContentAuth {
+	background: url("../imgs/login-bg.webp") center center;
+	background-size: cover;
+	&__overlay {
+		backdrop-filter: blur(4px);
+	}
+}
+
+.mainContentSign {
+	min-height: 100vh !important;
+}
+
+.login {
+	padding: 61px 46px 37px;
+	margin: 63px 0;
+	width: 90%;
+	height: max-content;
+	@media (min-width: 576px) {
+		width: 100%;
+		max-width: 533px;
+	}
+}
+
+// ================= Index page ================= //
+.headerHero {
+	min-height: 743px;
+}
+
+.headerHeroSwiper {
+	&__img {
+		max-height: 731px;
+	}
+}
+
+.hoverSecondaty {
+	&:hover {
+		border-bottom: 7px solid $secondary !important;
+		transform: translateY(-5px);
+	}
+}
+
+.testimonials {
+	@media (max-width: 576px) {
+		min-height: 690px;
+	}
+	@media (min-width: 576px) {
+		min-height: 500px;
+	}
+	@media (min-width: 992px) {
+		min-height: 625px;
+	}
+	.testimonialsSwiper {
+		&--slide {
+			@media (min-width: 576px) {
+				width: 429.43px;
+				height: 239px;
+			}
+			img {
+				width: 180.89px;
+				height: 239px;
+				border-radius: 15px;
+			}
+			&__rating {
+				height: 120px;
+				overflow-y: scroll;
+			}
+		}
+	}
+}
+
+.howToUse {
+	.howToUseGrid {
+		@media (min-width: 1600px) {
+			// column-gap: 200px;
+			> div {
+				max-width: 336px;
+			}
+		}
+		&__box:first-of-type {
+			position: relative;
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 104%;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 110px;
+				height: 45px;
+				background: url("../imgs/how-1.png") center center no-repeat;
+			}
+		}
+		&__box:nth-of-type(2) {
+			position: relative;
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 104%;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 110px;
+				height: 45px;
+				background: url("../imgs/how-2.png") center center no-repeat;
+			}
+		}
+	}
+}
+
+// ================= About us page ================= //
+.about-us {
+	.aboutBox {
+		max-width: 610px !important;
+	}
+}
+
+// ================= Support page ================= //
+.support {
+	.supportBox {
+		max-width: 610px !important;
+	}
+	.supportForm {
+		&__file {
+			height: 48px;
+		}
+	}
+}
+
+// ================= Home page ================= //
+
+// Home grid
+.homeGrid {
+	&__info {
+		max-width: 350px;
+	}
+	.infoGrid {
+		border-bottom: 1px dashed rgba($body-color, 10%);
+	}
+	.mealCard {
+		&__img {
+			width: 119px;
+			// height: 94px;
+		}
+	}
+}
+
+.homeNumbers {
+	&:hover {
+		.homeNumbers__main {
+			color: $secondary !important;
+		}
+	}
+}
+
+// Home swiper packages
+.homeSwiperPackages {
+	&__slide {
+		width: 337px !important;
+		&--img {
+			height: 195px;
+		}
+		&--info {
+			height: 40px;
+		}
+		&:hover {
+			box-shadow: 2px 0px 24px 0px #a9a9a93d;
+		}
+	}
+}
+
+// ================= Profile page ================= //
+.profile {
+	&__navs {
+		&--pills {
+			@media (min-width: 992px) {
+				width: 337px;
+			}
+			&__btn {
+				span {
+					min-width: max-content;
+				}
+				@media (min-width: 922px) {
+					&:hover {
+						padding-left: 48px !important;
+					}
+				}
+				&.active {
+					span {
+						color: $primary !important;
+					}
+					@media (min-width: 992px) {
+						::after {
+							content: "";
+							position: absolute;
+							height: 34px;
+							width: 4px;
+							top: 50%;
+							transform: translateY(-50%);
+							right: 0;
+							background-color: $secondary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.profileInfo {
+	.userPhotoBorder {
+		width: 161px;
+		height: 161px;
+		border: 1px dashed rgba($secondary, 32%);
+	}
+	.editProfile__btn {
+		border: 2px solid transparent;
+		&:hover {
+			border: 2px solid #239a41;
+			background-color: #fff !important;
+		}
+	}
+	.userPhoto {
+		&__label {
+			&--svgCont {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+}
+
+// ================= My packages page ================= //
+
+.mealCardPackages {
+	@media (max-width: 1104px) {
+		justify-content: center !important;
+		&__desc {
+			align-items: center;
+		}
+		.packagesBtns {
+			justify-content: center !important;
+		}
+	}
+	&__img {
+		width: 165px;
+		height: 132px;
+	}
+}
+
+.packagesBtns {
+	position: unset;
+}
+
+.mealCardPrev {
+	@media (max-width: 1600px) {
+		justify-content: center;
+		&__info {
+			justify-content: center !important;
+			p {
+				text-align: center !important;
+			}
+		}
+	}
+}
+
+.emptyPackageImg {
+	width: 206.09px;
+	height: 214px;
+}
+
+// ================= Locations ================= //
+
+.locations {
+	&__addLocation {
+		border: 1px dashed rgba($primary, 40%);
+	}
+	&__locationsCard {
+		min-height: 230px;
+		&--radio {
+			width: 20px !important;
+			height: 20px !important;
+			&:checked {
+				--bs-form-check-bg-image: url("../imgs/locations__locationsCard--radio.png") !important;
+				border: none !important;
+				& ~ label {
+					.locationChecked {
+						opacity: 1 !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+#addLocationeModal,
+#editAddressModal {
+	.modal-content {
+		max-height: 85vh !important;
+	}
+	.modal-dialog {
+		max-height: 70vh !important;
+		width: 95%;
+		max-width: 95%;
+		@media (min-width: 576px) {
+			width: 95%;
+			max-width: 768px;
+		}
+	}
+}
+
+// ================= Calories calc ================= //
+
+.caloriesShow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: #ffffff;
+	width: 233px;
+	height: 233px;
+}
+
+.caloriesShow .percent {
+	position: relative;
+}
+
+.caloriesShow svg {
+	position: relative;
+	width: 210px;
+	height: 210px;
+	transform: rotate(-90deg);
+}
+
+.caloriesShow svg circle {
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: #f0f0f0;
+	stroke-width: 10;
+	stroke-linecap: round;
+}
+
+.caloriesShow svg circle:last-of-type {
+	stroke-dasharray: 625px;
+	stroke-dashoffset: calc(625px - (625px * var(--percent)) / 100);
+	stroke: #3498db;
+}
+
+.caloriesShow .number {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.caloriesShow .number h3 {
+	font-weight: 200;
+	font-size: 3.5rem;
+}
+
+.caloriesShow .number h3 span {
+	font-size: 2rem;
+}
+
+.caloriesShow:nth-child(1) svg circle:last-of-type {
+	stroke: $secondary;
+}
+
+.caloriesShow:nth-child(2) svg circle:last-of-type {
+	stroke: $primary;
+}
+
+// ================= Meals pages ================= //
+
+.meals {
+	&__btn {
+		position: unset !important;
+		@media (min-width: 576px) {
+			position: absolute !important;
+		}
+	}
+}
+
+.mealsDays {
+	&__btn {
+		&.active {
+			border: 1px solid $primary !important;
+		}
+	}
+}
+
+.mealsContent {
+	&__img {
+		width: 146px;
+	}
+	&__feat {
+		border: 1px dashed rgba($secondary, 32%);
+	}
+	&__mealCard {
+		@media (max-width: 400px) {
+			flex-direction: column;
+			&--img {
+				margin: auto;
+				margin-top: 15px;
+			}
+			&--feat {
+				width: 100%;
+			}
+			p {
+				text-align: center !important;
+			}
+		}
+		@media (min-width: 400px) {
+			flex-direction: row;
+			&--img {
+				margin: 0;
+				margin-top: 0;
+			}
+			&--feat {
+				width: 150px;
+			}
+			p {
+				text-align: start;
+			}
+			p.text-end {
+				text-align: end;
+			}
+		}
+	}
+}
+
+.categoriesMealsSatPills {
+	button.nav-link.active {
+		color: #fff;
+	}
+	button.nav-link {
+		color: #000;
+	}
+}
+
+.mealDetails {
+	&__img {
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+	&__check {
+		&:checked {
+			~ label {
+				width: 24px;
+				height: 24px;
+				padding: 0 !important;
+				border-radius: 25px;
+				.mealDetails__label--select {
+					display: none;
+				}
+				.mealDetails__checkedArrow {
+					display: block !important;
+				}
+			}
+		}
+	}
+}
+
+.catSvgBox {
+	height: 74px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($body-color, 60%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	&__wrapper {
+		&--height {
+			overflow-y: scroll !important;
+			max-height: 80vh;
+			width: 101%;
+		}
+		width: 90%;
+		@media (min-width: 576px) {
+			max-width: 700px;
+		}
+	}
+	&__img {
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+}
+.showModal {
+	opacity: 1;
+	visibility: visible;
+	z-index: 500;
+}
+
+/* Add any other necessary styles for the modal */
+
+// ================= Shared things ================= //
+.boxShadowHover {
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		box-shadow: 2px 0px 24px 0px #a9a9a93d;
+	}
+}
+
+.fw-black {
+	font-weight: 900;
+}
+
+.boxShadowModal {
+	box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.24);
+}
+
+.modalClose {
+	background-color: $f6;
+}
+
+// ================= For flatpickr ================= //
+.flatpickr-day.selected {
+	background: $primary !important;
+	border-color: $primary !important;
+}
+
+.flatpickr-day:hover {
+	cursor: pointer;
+	outline: 0;
+	background: rgba($primary, 10%) !important;
+	border-color: rgba($primary, 10%) !important;
+}

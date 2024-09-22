@@ -1,0 +1,40 @@
+@import "../assets/variables";
+
+$themeColor: #fff !default;
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/swiper/modules/navigation/navigation.scss";
+
+@at-root {
+	:root {
+		--swiper-navigation-size: 15px;
+		// --swiper-navigation-top-offset: 0%;
+		// --swiper-navigation-sides-offset: 10px;
+		// --swiper-navigation-color: var(--swiper-theme-color);
+	}
+}
+
+.swiper-button-prev.swiper-button-prev-homeSwiperPackages,
+.swiper-button-next.swiper-button-next-homeSwiperPackages {
+	transition: all 0.3s ease-in-out;
+	top: 10px;
+	background-color: $secondary;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	&.swiper-button-disabled {
+		color: $secondary;
+		background-color: rgba($secondary, 10%);
+		opacity: 1;
+	}
+}
+
+.swiper-button-prev.swiper-button-prev-homeSwiperPackages,
+.swiper-rtl .swiper-button-next.swiper-button-next-homeSwiperPackages {
+	left: 10px;
+	right: auto;
+}
+.swiper-button-next.swiper-button-next-homeSwiperPackages,
+.swiper-rtl .swiper-button-prev.swiper-button-prev-homeSwiperPackages {
+	left: 55px;
+	right: auto;
+}

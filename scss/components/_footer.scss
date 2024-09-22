@@ -1,0 +1,40 @@
+// Primary footer
+.primaryFooter {
+	.footerPayMethod {
+		height: min-content;
+	}
+	&__link {
+		&:hover {
+			svg {
+				transform: translateX(-5px);
+			}
+		}
+	}
+	&__linksTo{
+		@media (max-width: 576px) {
+			min-width: 170px;
+		}
+	}
+}
+
+.svgPathPrimaryWhite {
+	path:first-of-type {
+		fill: $primary;
+	}
+	path:last-of-type {
+		fill: #fff;
+	}
+}
+
+// Secondary footer
+.secondaryFooter {
+	background-color: $footer-bg;
+	&__logo {
+		width: 62px;
+		height: 49px;
+	}
+}
+
+.appLinks {
+	height: 35px;
+}

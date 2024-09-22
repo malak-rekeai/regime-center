@@ -1,0 +1,66 @@
+.mainNavbar {
+	top: 0;
+	z-index: 99;
+	.navbar-toggler {
+		width: 30px;
+		height: 30px;
+	}
+	&__offcanvas {
+		@media (max-width: 500px) {
+			max-width: 80% !important;
+		}
+		@media (min-width: 501px) and (max-width: 991px) {
+			max-width: 400px !important;
+		}
+		&--btn-close {
+			position: absolute;
+			top: 23px;
+		}
+	}
+	.nav-logo {
+		width: 94px;
+		height: 75px;
+	}
+	&__link {
+		text-align: center;
+		@media (min-width: 992px) {
+			text-align: start;
+			width: max-content;
+		}
+		&.active {
+			color: $primary !important;
+			opacity: 1 !important;
+			font-weight: 700 !important;
+		}
+		&:hover {
+			color: $primary !important;
+		}
+	}
+	.navUserDropDown {
+		&__img {
+			width: 40px;
+			height: 40px;
+		}
+		& ~ ul {
+			min-width: 168px;
+			li:first-of-type {
+				a {
+					padding-top: 25px !important;
+				}
+			}
+			li:last-of-type {
+				a {
+					border-top: 1px dashed rgba($body-color, 10%);
+				}
+			}
+		}
+	}
+	.navbar-logo {
+		width: 50px;
+		height: 40px;
+		@media (min-width: 576px) {
+			width: 94px;
+			height: 75px;
+		}
+	}
+}

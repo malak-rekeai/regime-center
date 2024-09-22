@@ -1,0 +1,138 @@
+$utilities: ();
+$utilities: map-merge(
+	(
+		"opacity": (
+			property: opacity,
+			values: (
+				0: 0,
+				10: 0.1,
+				25: 0.25,
+				40: 0.4,
+				50: 0.5,
+				60: 0.6,
+				70: 0.7,
+				75: 0.75,
+				80: 0.8,
+				100: 1,
+			),
+		),
+		"bg-opacity": (
+			css-var: true,
+			class: bg-opacity,
+			values: (
+				10: 0.1,
+				25: 0.25,
+				30: 0.3,
+				50: 0.5,
+				75: 0.75,
+				100: 1,
+			),
+		),
+		"border-opacity": (
+			css-var: true,
+			class: border-opacity,
+			values: (
+				10: 0.1,
+				25: 0.25,
+				50: 0.5,
+				75: 0.75,
+				100: 1,
+			),
+		),
+	),
+	$utilities
+);
+
+$theme-colors: (
+	"primary": $primary,
+	"secondary": $secondary,
+	"success": $success,
+	"info": $info,
+	"warning": $warning,
+	"danger": $danger,
+);
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem;
+$spacers: (
+	0: 0,
+	2: $spacer * 0.125,
+	4: $spacer * 0.25,
+	5: $spacer * 0.3125,
+	7: $spacer * 0.4375,
+	8: $spacer * 0.5,
+	9: $spacer * 0.5625,
+	10: $spacer * 0.625,
+	12: $spacer * 0.75,
+	11: $spacer * 0.6875,
+	13: $spacer * 0.8125,
+	15: $spacer * 0.9375,
+	17: $spacer * 1.0625,
+	20: $spacer * 1.25,
+	25: $spacer * 1.5625,
+	22: $spacer * 1.375,
+	30: $spacer * 1.875,
+	32: $spacer * 2,
+	40: $spacer * 2.5,
+	44: $spacer * 2.75,
+	50: $spacer * 3.125,
+	60: $spacer * 3.75,
+	70: $spacer * 4.375,
+	80: $spacer * 5,
+	90: $spacer * 5.625,
+	100: $spacer * 6.25,
+	110: $spacer * 6.875,
+	120: $spacer * 7.5,
+	130: $spacer * 8.125,
+	150: $spacer * 9.2,
+	210: $spacer * 13.125,
+	250: $spacer * 15.625,
+);
+// scss-docs-end spacer-variables-maps
+
+$theme-colors-border-subtle: (
+	"primary": $primary-border-subtle,
+	"secondary": $secondary-border-subtle,
+	"dark": $body-color,
+);
+
+// Create a width height classes
+@mixin generate-width-height-classes {
+	$numbers: (0, 5, 7, 8, 9, 10, 11, 12, 13, 14, 53);
+	$multiplier: 1;
+
+	@each $number in $numbers {
+		$value: $number * $multiplier;
+
+		.w-#{$value}px {
+			width: #{$value}px !important;
+		}
+
+		.h-#{$value}px {
+			height: #{$value}px !important;
+		}
+	}
+
+	@for $i from 15 through 450 {
+		@if $i % 5 == 0 {
+			.w-#{$i}px {
+				width: #{$i}px !important;
+			}
+			.h-#{$i}px {
+				height: #{$i}px !important;
+			}
+		}
+	}
+}
+
+@include generate-width-height-classes;
+
+// Scroll bar
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 3px;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: $primary;
+	border-radius: 2px;
+}
